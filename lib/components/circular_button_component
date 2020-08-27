@@ -1,0 +1,37 @@
+
+class CircularButtonComponent extends StatelessWidget {
+  final double width;
+  final double height;
+  final Color color;
+  final Border border;
+  final Decoration decoration;
+  final Icon icon;
+  final Function onClick;
+
+  CircularButtonComponent({
+    this.color,
+    this.width,
+    this.height,
+    this.icon,
+    this.onClick,
+    this.border,
+    this.decoration,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          color: color,
+          shape: BoxShape.circle,
+          border: Border.all(color: Colors.white, width: 2.0)),
+      width: width,
+      height: height,
+      child: IconButton(
+        icon: icon,
+        enableFeedback: true,
+        onPressed: onClick,
+      ),
+    );
+  }
+}
